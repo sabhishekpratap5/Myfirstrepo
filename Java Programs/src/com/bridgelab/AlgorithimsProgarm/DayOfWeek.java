@@ -1,10 +1,18 @@
+/******************************************************************************
+ *  Purpose: for find day of week from given day,month & year
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
+
 package com.bridgelab.AlgorithimsProgarm;
 /**
-*  @author  Abhishek Pratap Singh
 *  @version 1.0
 *  @since   05-03-2018
 */
-import java.util.*;
 
 import com.bridgelab.utility.Utility;
 public class DayOfWeek {
@@ -12,18 +20,17 @@ public class DayOfWeek {
 		   System.out.println("Program Started");
 		   
 		   System.out.println("Day of Week is :");
-		   Scanner scan=new Scanner(System.in);
+		   Utility utility = new Utility();
 		   int day,month,year;
 		   System.out.println("Enter the day ");
-		   day=scan.nextInt();
+		   day=utility.inputInteger();
 		   System.out.println("Enter the month");
-		   month=scan.nextInt();
+		   month=utility.inputInteger();
 		   System.out.println("Enter the year ");
-		   year=scan.nextInt();
+		   year=utility.inputInteger();
 		   System.out.print("Week of the day is ");
 		   Utility.dayOfWeek(day,month,year);
 		   
-		   scan.close();
 		}
 
 }

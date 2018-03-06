@@ -1,24 +1,30 @@
+/******************************************************************************
+ *  Purpose: Replace Username with a proper name  
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
+
 package com.bridgelab.functionalPrograms;
 /**
-*Purpose:Replace Username with a proper name 
 *  @author  Abhishek Pratap Singh
 *  @version 1.0
 *  @since   05-03-2018
 */
-import java.util.regex.*;
-
 import com.bridgelab.utility.Utility;
 
-import java.util.*;
 public class User_Name 
 { 
 
 	public static void main(String []args){
-		Scanner scan = new Scanner (System.in);
+		Utility utility = new Utility();
 		String string = "Hello <<UserName>>, How are you?";
 
 		System.out.println("enter username ");
-		String username =scan.next();
+		String username =utility.inputString();
 		int n=username.length();
 		if(n<3)
 		{

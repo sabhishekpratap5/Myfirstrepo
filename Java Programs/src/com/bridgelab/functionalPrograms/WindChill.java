@@ -1,24 +1,32 @@
+/******************************************************************************
+ *  Purpose: find out the windchill
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
+
 package com.bridgelab.functionalPrograms;
 /**
-*Purpose: find out the windchill 
 *  @author  Abhishek Pratap Singh
 *  @version 1.0
 *  @since   05-03-2018
 */
-import java.util.*;
-
 import com.bridgelab.utility.Utility;
+
 public class WindChill {
 
 	public static void main(String []args)
 	{
-		Scanner scan = new Scanner(System.in);
+		Utility utility = new Utility();
 
 		System.out.println("Enter temperature ");
-		double temperature = scan.nextDouble();
+		double temperature =utility.inputDouble();
 
 		System.out.println("Enter value of speed ");
-		double value = scan.nextDouble();
+		double value = utility.inputDouble();
 
 		double windchill=Utility.windChill(temperature,value);
 

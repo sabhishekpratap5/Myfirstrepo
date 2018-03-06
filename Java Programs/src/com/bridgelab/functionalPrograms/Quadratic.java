@@ -1,25 +1,31 @@
+/******************************************************************************
+ *  Purpose:for find out the Quadratic roots find out
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
+
 package com.bridgelab.functionalPrograms;
 /**
- * Purpose:Quadratic distance find out
-*  @author  Abhishek Pratap Singh
-*  @version 1.0
-*  @since   05-03-2018
-*/
-import java.util.*;
-
+ *  @author  Abhishek Pratap Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ */
 import com.bridgelab.utility.Utility;
+
 public class Quadratic {
-
-
 	public static void main(String[] args){
 
-		Scanner scanner = new Scanner(System.in);
+		Utility utility = new Utility();
 
 		System.out.println("Enter the values of a, b and c");
 
-		double a = scanner.nextDouble();
-		double b = scanner.nextDouble();
-		double c = scanner.nextDouble();
+		double a = utility.inputDouble();
+		double b = utility.inputDouble();
+		double c = utility.inputDouble();
 
 		double delta=Utility.quadratic( a, b, c);
 

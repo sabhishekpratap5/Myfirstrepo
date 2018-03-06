@@ -1,10 +1,18 @@
-package com.bridgelab.functionalPrograms;
-/**
- * Purpose: for find out the permutation of the string 
-*  @author  Abhishek Pratap Singh
-*  @version 1.0
-*  @since   05-03-2018
-*/
+/******************************************************************************
+ *  Purpose: for find out the permutation of the string 
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
+
+package com.bridgelab.functionalPrograms;/**
+ *  @author  Abhishek Pratap Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ */
 
 import com.bridgelab.utility.Utility;
 

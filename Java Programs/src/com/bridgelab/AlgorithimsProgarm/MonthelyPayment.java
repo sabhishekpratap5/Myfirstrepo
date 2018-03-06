@@ -1,29 +1,34 @@
+/******************************************************************************
+ *  Purpose: for find out the monthly interest from payment. 
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
+
 package com.bridgelab.AlgorithimsProgarm;
 /**
-*  @author  Abhishek Pratap Singh
-*  @version 1.0
-*  @since   05-03-2018
-*/
-import java.util.*;
-
+ *  @version 1.0
+ *  @since   05-03-2018
+ */
 import com.bridgelab.utility.Utility;
 public class MonthelyPayment {
-	
+
 	public static void main(String[] args) {
-		
-		
+
 		double principale,rate,year;
-		Scanner scan=new Scanner(System.in);
+		Utility utility = new Utility();
 		System.out.println("Please Enter the Amount :");
-		principale=scan.nextDouble();
+		principale=utility.inputDouble();
 		System.out.println("Please Enter the Rate :");
-		rate=scan.nextDouble();
+		rate=utility.inputDouble();
 		System.out.println("Please Enter the year :");
-		year=scan.nextDouble();
+		year=utility.inputDouble();
 		Utility.monthlyPayment(year, principale, rate);
-		
-		scan.close();
-		
+
+
 	}
 
 }

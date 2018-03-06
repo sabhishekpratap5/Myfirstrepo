@@ -1,24 +1,28 @@
+/******************************************************************************
+ *  Purpose: for find out note of the given rupee . 
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
 package com.bridgelab.AlgorithimsProgarm;
 /**
-*  @author  Abhishek Pratap Singh
-*  @version 1.0
-*  @since   05-03-2018
-*/
-import java.util.*;
-
+ *  @version 1.0
+ *  @since   05-03-2018
+ */
 import com.bridgelab.utility.Utility;
+
 public class Vendingmachine {
-	
-	
 	public static void main(String []args)
 	{
-		Scanner scan = new Scanner (System.in);
-		
+		Utility utility = new Utility();
+
 		System.out.println("enter amount ");
-		int value = scan.nextInt();
-		
-		 Utility.vendingMachine(value);
-		 scan.close();
+		int value =utility.inputInteger();
+
+		Utility.vendingMachine(value);
 	}
 
 }

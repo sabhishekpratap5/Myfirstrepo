@@ -1,25 +1,32 @@
+/******************************************************************************
+ *  Purpose: for find out the anagarm of the String
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
+
 package com.bridgelab.AlgorithimsProgarm;
 /**
- * for find out the anagarm of the String
 *  @author  Abhishek Pratap Singh
 *  @version 1.0
 *  @since   05-03-2018
 */
-import java.util.Arrays;
-import java.util.Scanner;
-
 import com.bridgelab.utility.Utility;
+
 public class Anagram {
 
 	
 	public static void main(String[]args)
 	{
-		Scanner scan = new Scanner(System.in);
+		Utility utility = new Utility();
 		System.out.println("Enter first String ");
-		String s1=scan.next();
+		String s1=utility.inputString();
 		System.out.println("Enter second string ");
 
-		String s2=scan.next();
+		String s2=utility.inputString();
 
 		String string1=s1.toLowerCase();
 		String string2=s2.toLowerCase();
@@ -30,7 +37,6 @@ public class Anagram {
 		char char2[]=string2.toCharArray();
 
 		Utility.anagram(char1,char2);
-		scan.close();
 
 	}
 

@@ -1,16 +1,22 @@
+/******************************************************************************
+ *  Purpose: for find out the sorted stringarray using merge sort. 
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
 package com.bridgelab.AlgorithimsProgarm;
 /**
-*  @author  Abhishek Pratap Singh
-*  @version 1.0
-*  @since   05-03-2018
-*/
-
-import java.util.Scanner;
+ *  @version 1.0
+ *  @since   05-03-2018
+ */
 
 import com.bridgelab.utility.Utility;
 
 public class MergesortforString {
-	
+
 	public static void printArray(char array[])
 	{
 		int n = array.length;
@@ -18,18 +24,17 @@ public class MergesortforString {
 			System.out.print(array[i]);
 		System.out.println();
 	}
-	
+
 	public static void main(String args[])
 	{
-		Scanner scan = new Scanner(System.in);
+		Utility utility = new Utility();
 		System.out.println("enter string");
-		String str=scan.next();
+		String str=utility.inputString();
 		char array[]=str.toCharArray();
-		
+
 		Utility.stringSort(array,0,array.length-1);
 		printArray(array);
-		
-		scan.close();
+
 	}
 
 

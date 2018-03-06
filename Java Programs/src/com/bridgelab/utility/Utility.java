@@ -10,11 +10,83 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Utility {
+	
+	
+	
+	public static Scanner scanner;
+	
+	 
+	 
+	/**
+	 *  
+	 */
+	public Utility()
+	{
+		scanner = new Scanner(System.in);
+		
+	}
+	/**
+	 * @return string input given by the user
+	 */
+	public  String inputString()
+	{
+		try
+		{
+			return scanner.next();
+		}
+		catch (Exception e) 
+		{
+			System.out.println(e);
+		}
+		return "";
+	}
+	/**
+	 * @return int value given by the user
+	 */
+	public int inputInteger()
+	{
+		try
+		{
+			return scanner.nextInt();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		return 0;
+	}
+	/**
+	 * @return double value given by the user
+	 */
+	public double inputDouble()
+	{
+		try
+		{
+			return scanner.nextDouble();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		return 0.0;
+	}
+	/**
+	 * @return boolean value given by the user
+	 */
+	public boolean inputBoolean()
+	{
+		try
+		{
+			return scanner.nextBoolean();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		return false;
+	}
 
 	/**
 	 * @param string
 	 * @param replace	  
-	 * @return
+	 * @return a replace string
 	 */
 	public static String replaceWithPattern(String string,String replace){
 
@@ -28,6 +100,8 @@ public class Utility {
 
 	/**
 	 * @param number
+	 * nothing return
+	 * this method is give the percentage of flip coin head and tell
 	 */
 	public static void flipCoin(int number)
 	{
@@ -46,18 +120,19 @@ public class Utility {
 			}
 		}
 
-		float h_pr = (head*100)/number;
-		float t_pr = (tell*100)/number;
+		float headPercentes = (head*100)/number;
+		float tellPercentes = (tell*100)/number;
 		System.out.println("Number of Head "+head);
-		System.out.println("Total Precent of Head "+ h_pr+"%");
+		System.out.println("Total Precent of Head "+  headPercentes+"%");
 		System.out.println("Number of Tail "+tell);
-		System.out.println("Total Precent of tail "+ t_pr+"%");
+		System.out.println("Total Precent of tail "+tellPercentes+"%");
 
 	}
 
 	/**
 	 * @param year
-	 * @return
+	 * @return boolean datatype 
+	 * this method is give the year is leap year or not
 	 */
 	public static boolean leapYear(int year)
 	{
@@ -75,7 +150,7 @@ public class Utility {
 
 	/**
 	 * @param number
-	 * @return power of 2 until number
+	 * @return double datatype power of 2 until number
 	 */
 	public static double power(int number)
 	{
@@ -91,7 +166,7 @@ public class Utility {
 
 	/**
 	 * @param number
-	 * @return harmonic value until number
+	 * @return double datatype harmonic value until number
 	 */
 	public static double harmonicValue(double number)
 	{
@@ -111,7 +186,7 @@ public class Utility {
 	 * @param stack
 	 * @param goal
 	 * @param NoOfTimes
-	 * @return its return the percents of win && loss
+	 * @return  integer value its return the percents of win && loss
 	 */
 	public static int GamblerGame(int stack,int goal,int NoOfTimes)
 	{
@@ -150,7 +225,7 @@ public class Utility {
 	/**
 	 * @param array
 	 * @param length
-	 * @return its return the 
+	 * @return integer value its return the in a array how much triplets are there. 
 	 */
 	public static int addOfSum(int array[],int length)
 	{
@@ -177,9 +252,9 @@ public class Utility {
 
 
 	/**
-	 * @param argument1
-	 * @param argument2
-	 * @return its return the distance between two arguments;
+	 * @param argument1 is the cofficient of X
+	 * @param argument2 is the cofficient of Y
+	 * @return double value its return the distance between two arguments;
 	 */
 	public static double distanceOfTwoArguments(int argumentX,int argumentY)
 	{
@@ -192,8 +267,8 @@ public class Utility {
 
 	/**
 	 * @param string
-	 * @param l
-	 * @param permute strings of the string
+	 * @param l is the lower index of the string
+	 * @param nothing return permute strings of the string
 	 */
 	public static void permute(String string, int l, int r)
 	{
@@ -211,16 +286,17 @@ public class Utility {
 	}
 
 
+	
 	/**
-	 * @param a
+	 * @param string
 	 * @param i
 	 * @param j
-	 * @return swap of string
+	 * @return its return swap string
 	 */
-	public static String swap(String a, int i, int j)
+	public static String swap(String string, int i, int j)
 	{
 		char tempreri;
-		char[] charArray = a.toCharArray();
+		char[] charArray = string.toCharArray();
 		tempreri = charArray[i] ;
 		charArray[i] = charArray[j];
 		charArray[j] = tempreri;
@@ -231,7 +307,7 @@ public class Utility {
 
 	/**
 	 * @param choice
-	 * @return elapsed time
+	 * @return long value of elapsed time
 	 */
 	public static long stopwatch(int choice)
 	{
@@ -255,9 +331,14 @@ public class Utility {
 
 	//prime factor method
 
+	/**
+	 * @param number
+	 * nothing return 
+	 * it give the prime factor of given number
+	 */
 	public static void primeFactor(int number)
 	{
-		String s="";
+		String string="";
 
 
 		for(int i=2;i<=number;)
@@ -265,7 +346,7 @@ public class Utility {
 			if(number%i==0)
 			{
 				number=number/i;
-				s+=i+" ";
+				string+=i+" ";
 
 			}
 			else
@@ -275,19 +356,21 @@ public class Utility {
 				if(number%i==0)
 				{
 					number=number/i;
-					s+=i+" ";
+					string+=i+" ";
 
 				}
 			}
 		} 
 
 
-		System.out.println("Prime factor is "+s);
+		System.out.println("Prime factor is "+string);
 	}
 	
 	
 	/**
 	 * @param number
+	 * nothing return
+	 * its generate the random number.
 	 */
 	public static void random1(int number)
 	{
@@ -303,7 +386,7 @@ public class Utility {
 	 * @param a
 	 * @param b
 	 * @param c
-	 * @return delta
+	 * @return double value of delta
 	 */
 	public static double quadratic(double a,double b,double c)
 	{
@@ -329,7 +412,7 @@ public class Utility {
 	/**
 	 * @param temperature
 	 * @param value
-	 * @return windchill temprature
+	 * @return double value of windchill temprature
 	 */
 	public static double windChill(double temperature,double value)
 	{
@@ -349,7 +432,8 @@ public class Utility {
 	/**
 	 * @param char1
 	 * @param char2
-	 * its return anagram string
+	 * nothing return
+	 * its work for check string is  anagram string or not
 	 */
 	public static void anagram( char char1[],char char2[])
 	{
@@ -388,7 +472,7 @@ public class Utility {
 	/**
 	 * @param low
 	 * @param high
-	 * @return all prime value from given range
+	 * @return integer value of all prime value from 0 to 1000.
 	 */
 	public static int primeNumInRange(int low,int high) {
 		for(int i=2; i<high; ++i)
@@ -415,6 +499,7 @@ public class Utility {
 		//print method for array integers
 		/**
 		 * @param array
+		 * nothing return
 		 * it is work for print the array
 		 */
 		public static void printArray(int array[])
@@ -434,11 +519,11 @@ public class Utility {
 		/**
 		 * @param low
 		 * @param power
-		 * @return the asumed number.
+		 * @return int value of the assumed number.
 		 */
 		public static int questionNumber(int low,int power)
 		{
-			Scanner scan=new Scanner(System.in);
+			Scanner scanner=new Scanner(System.in);
 
 			if (low>power)
 			{
@@ -456,7 +541,7 @@ public class Utility {
 			System.out.println("if yes then type true if no then type false ");
 			boolean flag =true;
 
-			if(flag!=scan.nextBoolean())
+			if(flag!=scanner.nextBoolean())
 			{
 				low=middle+1;
 			}
@@ -472,6 +557,7 @@ public class Utility {
 		 * @param array
 		 * @param low
 		 * @param high
+		 * nothing return
 		 * it is work for sort the array.
 		 */
 		public static void sort(int array[], int low, int high)
@@ -495,6 +581,7 @@ public class Utility {
 		 * @param low
 		 * @param middle
 		 * @param high
+		 * nothing return
 		 * it is work for merge array.
 		 */
 		public static void merge(int array[], int low, int middle, int high)
@@ -555,7 +642,8 @@ public class Utility {
 		 * @param array
 		 * @param low
 		 * @param high
-		 * it is give the sorted chracter of string
+		 * nothing return
+		 * it is give the sorted character of string
 		 */
 		public static void stringSort(char array[], int low, int high)
 		{
@@ -615,7 +703,7 @@ public class Utility {
 		/**
 		 * @param array
 		 * @param num
-		 * @return genric binary search
+		 * @return generic binary search
 		 */
 		public static <T extends Comparable<T>> T[] binarySearchInt(T[] array, T num){
 			int size = array.length;
@@ -724,6 +812,7 @@ public class Utility {
 		 * @param low
 		 * @param middle
 		 * @param high
+		 * nothing return
 		 * it is work for merge array.
 		 */
 		public static void stringMerge(char array[], int low, int middle, int high)
@@ -855,7 +944,7 @@ public class Utility {
 
 		/**
 		 * @param temperatuer
-		 * @return this method is use for converting the temperature.
+		 * @return  integer value this method is use for converting the temperature.
 		 */
 		public static int temperaturConversiontoFarenhit(int temperatuer)
 		{
@@ -880,6 +969,7 @@ public class Utility {
 		 * @param day
 		 * @param month
 		 * @param year
+		 * nothing return
 		 * this method is using for find the day of week
 		 */
 		public static void dayOfWeek(int day,int month,int year) 
@@ -935,7 +1025,8 @@ public class Utility {
 		 * @param year
 		 * @param principal
 		 * @param rate
-		 * calculate intrest of monthly
+		 * nothing return
+		 * calculate interest of monthly
 		 */
 		public static void monthlyPayment(double year,double principal, double rate )
 		{
@@ -947,9 +1038,11 @@ public class Utility {
 		}
 
 
+		
 		/**
 		 * @param num
-		 * conver the binary number
+		 * @return integer value 
+		 * it is work for converting decimal to binary number
 		 */
 		public static int[] toBinary(int num) 
 		{
@@ -975,7 +1068,8 @@ public class Utility {
 
 		/**
 		 * @param c
-		 * for sqrure the value
+		 * nothing return
+		 * it is work for giving the square root of the value
 		 */
 		public static void sqrt(double c) 
 		{   

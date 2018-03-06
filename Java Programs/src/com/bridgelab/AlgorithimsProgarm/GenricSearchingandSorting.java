@@ -1,21 +1,28 @@
+/******************************************************************************
+ *  Purpose: generic method of searching and sorting 
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
+
 package com.bridgelab.AlgorithimsProgarm;
 /**
-*  @author  Abhishek Pratap Singh
 *  @version 1.0
 *  @since   05-03-2018
 */
-import java.util.Scanner;
-
 import com.bridgelab.utility.Utility;
 
 public class GenricSearchingandSorting {
 	
 	public static void main(String[] args) {
 
-		Scanner scan = new Scanner(System.in);
+		Utility utility = new Utility();
 
 		System.out.println("enter size of array ");
-		int n = scan.nextInt();
+		int n = utility.inputInteger();
 
 		System.out.println("if you want sort the integer array using insertion sort then press 1");
 		System.out.println("--------------------------------------------------------------------");
@@ -37,7 +44,7 @@ public class GenricSearchingandSorting {
 		String str[];
 
 		System.out.println("enter choice ");
-		int choice = scan.nextInt();
+		int choice = utility.inputInteger();
 
 		switch (choice) {
 		case 1:
@@ -45,7 +52,7 @@ public class GenricSearchingandSorting {
 
 			 array = new Integer[n];
 			for (int i = 0; i < n; i++) {
-				array[i] = scan.nextInt();
+				array[i] =utility.inputInteger();
 			}
 			array= Utility.insertionSortString(array);
 			Utility.print(array, array.length);
@@ -55,7 +62,7 @@ public class GenricSearchingandSorting {
 			System.out.println("enter String ");
 			 stringArray = new String[n];
 			for (int i = 0; i < n; i++) {
-				stringArray[i] = scan.next();
+				stringArray[i] = utility.inputString();
 			}
 			str = Utility.insertionSortString(stringArray);
 			Utility.print(str, stringArray.length);
@@ -67,7 +74,7 @@ public class GenricSearchingandSorting {
 
 			 array = new Integer[n];
 			for (int i = 0; i < n; i++) {
-				array[i] = scan.nextInt();
+				array[i] = utility.inputInteger();
 			}
 			array = Utility.bubbleSortInt(array);
 			Utility.print(array, array.length);
@@ -77,7 +84,7 @@ public class GenricSearchingandSorting {
 			System.out.println("enter String ");
 			 stringArray = new String[n];
 			for (int i = 0; i < n; i++) {
-				stringArray[i] = scan.next();
+				stringArray[i] =utility.inputString();
 			}
 			 str = Utility.bubbleSortInt(stringArray);
 			 Utility.print(str, stringArray.length);
@@ -89,11 +96,11 @@ public class GenricSearchingandSorting {
 
 			 array = new Integer[n];
 			for (int i = 0; i < n; i++) {
-				array[i] = scan.nextInt();
+				array[i] = utility.inputInteger();
 			}
 			Utility.insertionSortString(array);
 			System.out.println("enter key ");
-			Integer key = scan.nextInt();
+			Integer key = utility.inputInteger();
 			array = Utility.binarySearchInt(array,key);
 			Utility.print(array, array.length);
 			break;
@@ -102,12 +109,12 @@ public class GenricSearchingandSorting {
 			System.out.println("enter String ");
 			 stringArray = new String[n];
 			for (int i = 0; i < n; i++) {
-				stringArray[i] = scan.next();
+				stringArray[i] =utility.inputString();
 			}
 			
 			Utility.insertionSortString(stringArray);
 			System.out.println("enter Stringkey ");
-			String stringKey = scan.next();
+			String stringKey =utility.inputString();
 			System.out.println();
 			str = Utility.binarySearchInt(stringArray,stringKey);
 			Utility.print(str, stringArray.length);
@@ -116,7 +123,6 @@ public class GenricSearchingandSorting {
 		default: System.out.println("program end");
 
 		}
-		scan.close();
 	}
 
 }

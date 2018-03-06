@@ -1,24 +1,32 @@
-package com.bridgelab.functionalPrograms;
-/**
- * Purpose:for find out the distance between x and y arguments
+/******************************************************************************
+ *  Purpose: for find out the distance between coefficient x and coefficient y arguments
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
+
+package com.bridgelab.functionalPrograms;/**
 *  @author  Abhishek Pratap Singh
 *  @version 1.0
 *  @since   05-03-2018
 */
-import java.util.*;
 
 import com.bridgelab.utility.Utility;
+
 public class Distance {
 	
 	
 	public static void main(String[] args) {
 
         
-		Scanner scan = new Scanner (System.in);
+		Utility utility = new Utility();
 		System.out.println("enter first number ");
-        int argumentX = scan.nextInt();
+        int argumentX = utility.inputInteger();
         System.out.println("enter second number ");
-        int argumentY = scan.nextInt();
+        int argumentY =utility.inputInteger();
 
         
         Utility.distanceOfTwoArguments(argumentX, argumentY);

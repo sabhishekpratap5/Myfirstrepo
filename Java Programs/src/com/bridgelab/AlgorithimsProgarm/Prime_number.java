@@ -1,11 +1,18 @@
+/******************************************************************************
+ *  Purpose: for find out the prime number in given range 0 to 1000.
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
+
 package com.bridgelab.AlgorithimsProgarm;
 /**
-*  @author  Abhishek Pratap Singh
 *  @version 1.0
 *  @since   05-03-2018
 */
-import java.util.*;
-
 import com.bridgelab.utility.Utility;
 public class Prime_number {
 
