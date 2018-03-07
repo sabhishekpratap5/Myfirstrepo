@@ -1,8 +1,22 @@
+/******************************************************************************
+ *  Purpose:it contain all the method of programs 
+ *
+ *  @author  Abhishek Singh
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
+
 package com.bridgelab.utility;
 
+import com.bridgelab.Datastructure.*;
+import com.bridgelab.Datastructure.LinkedList;
+
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.util.*;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -1082,6 +1096,23 @@ public class Utility {
 				t=((c/t)+t)/2.0;
 			}
 			System.out.println(c+"Squre of Number is :"+t);
+		}
+		
+		//for right the data from file
+		public static void writeFileOrUpdate(LinkedList list)
+		{
+			try {
+				String string = list.toString();
+				FileWriter fw = new FileWriter("/home/bridgelab/linkedlist.text");
+				BufferedWriter bw = new BufferedWriter(fw);
+				bw.write(string);
+				bw.close();
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			
 		}
 
 
