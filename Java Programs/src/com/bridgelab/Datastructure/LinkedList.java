@@ -28,10 +28,10 @@ public class LinkedList <T> {
 
 
 
-	public void add(T value)
+	public <T> void add(T value)
 	{  
 
-		MyNode<T>  n= new MyNode<T>(value);
+		MyNode  n= new MyNode (value);
 		n.data=value;
 		n.next=null;
 		n.next=first;
@@ -39,16 +39,16 @@ public class LinkedList <T> {
 	}
 
 
-	public void remove( T item) {
-		MyNode<T> temp = first;
-		MyNode<T> prev = first;
+	public <T>void remove( T item) {
+		MyNode temp = first;
+		MyNode prev = first;
 
 		if(first.data==item){
 			first =first.next;
 
 		}else {
 
-			while(temp.data!=item) {
+			while(!item.equals(temp.data)) {
 				prev=temp;
 				temp =temp.next;
 			}
@@ -61,13 +61,13 @@ public class LinkedList <T> {
 
 
 
-	public boolean search(T item)
+	public <T> boolean search(T key)
 	{
-		MyNode <T> temp = first;
+		MyNode temp = first;
 		while(temp!=null)
 		{
 
-			if((temp.data).equals(item))
+			if((temp.data).equals(key))
 			{
 				return true;
 
@@ -77,7 +77,7 @@ public class LinkedList <T> {
 		return false;
 	}
 
-	public boolean isEmpty()
+	public <T> boolean isEmpty()
 	{
 		if(first==null)
 
@@ -124,10 +124,10 @@ public class LinkedList <T> {
 		}
 	}
 
-	public void append(T value)
+	public <T> void append(T value)
 	{
 
-		MyNode<T> node=new MyNode<T>(value);
+		MyNode node=new MyNode(value);
 
 		if(first==null)
 			first=node;
