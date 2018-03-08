@@ -3,22 +3,24 @@ package com.bridgelab.Datastructure;
 import com.bridgelab.utility.Utility;
 
 public class UnorderdListNode {
-	public static void main(String[] args) 
-	{
+
+	
+	public static void main(String[] args) {
+
 		LinkedList<Integer> linkedlist=new LinkedList<Integer>(); 	 
 		Utility utility=new Utility();
-		String string[]=ReadFile.readListOfWords();
+		String string[]=utility.readListOfWords();
 
 
 		for(int i=0;i<string.length;i++)
 		{
-			linkedlist.append(Integer.parseInt(string[i]));
+			linkedlist.append((string[i]));
 		}
 
 
 		System.out.print("Enter the Key : ");
 
-		int key=utility.inputInteger();
+		String key=utility.inputString();
 		boolean result=linkedlist.search(key);
 
 
@@ -29,9 +31,9 @@ public class UnorderdListNode {
 			System.out.println(key+" Key is deleted ");
 			System.out.println("updated list is ");
 			Utility.writeFileOrUpdate(linkedlist);
-			
 
-			
+
+
 		}
 		else
 		{
@@ -40,15 +42,20 @@ public class UnorderdListNode {
 			System.out.println(key+" Key is added ");
 			System.out.println("updated list is ");
 			Utility.writeFileOrUpdate(linkedlist);
-			
+
 		}
-		
+
 		linkedlist.iterate();
 		linkedlist.size();
-		
-		
 
 
+
+	
+
+	
+		
+		
+		
 	}
 
 }
