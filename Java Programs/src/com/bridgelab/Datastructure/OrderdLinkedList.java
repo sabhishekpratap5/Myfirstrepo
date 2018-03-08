@@ -35,7 +35,7 @@ public class OrderdLinkedList <T>{
 
 		OrderdNode  n= new OrderdNode (value);
 		n.data=value;
-		n.next=null;
+		
 		n.next=first;
 		first=n;
 	}
@@ -141,7 +141,7 @@ public class OrderdLinkedList <T>{
 	}
 	
 	
-	public static <T extends Comparable<T>>void  sortList(OrderdLinkedList<T> orderlinkedlist)
+	public static <T extends Comparable<T>> String[] sortList(OrderdLinkedList<T> orderlinkedlist)
 	{
 		
 		String string=orderlinkedlist.toString();
@@ -151,7 +151,7 @@ public class OrderdLinkedList <T>{
 		String array[]=Utility.bubbleSortInt(string1);
 		Utility.print(array, array.length);
 		
-		
+		return array;
 	
 		}
 	

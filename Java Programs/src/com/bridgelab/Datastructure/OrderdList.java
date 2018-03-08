@@ -31,8 +31,9 @@ public class OrderdList {
 			System.out.println("updated list is ");
 			
 			
-			Utility.writeFileOrUpdateIntegerfile(orderdlinkedlist);
-			OrderdLinkedList.sortList(orderdlinkedlist);
+			
+			String array[]=OrderdLinkedList.sortList(orderdlinkedlist);
+			Utility.writeFileOrUpdateIntegerfile(array);
 
 
 
@@ -43,8 +44,9 @@ public class OrderdList {
 			System.out.println(key+" Key is not Found ");
 			System.out.println(key+" Key is added ");
 			System.out.println("updated list is ");
-			Utility.writeFileOrUpdateIntegerfile(orderdlinkedlist);
-			OrderdLinkedList.sortList(orderdlinkedlist);
+			
+			String array[]=OrderdLinkedList.sortList(orderdlinkedlist);
+			Utility.writeFileOrUpdateIntegerfile(array);
 
 		}
 

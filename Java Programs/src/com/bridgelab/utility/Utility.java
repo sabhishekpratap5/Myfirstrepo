@@ -17,9 +17,6 @@ import java.io.BufferedWriter;
 import java.util.*;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -1123,10 +1120,15 @@ public class Utility {
 	 * @param list
 	 * it is work for update the file for integer value
 	 */
-	public static void writeFileOrUpdateIntegerfile(OrderdLinkedList list)
+	public static void writeFileOrUpdateIntegerfile(String []array)
 	{
 		try {
-			String string = list.toString();
+			String string="";
+
+			for(int i=0;i<array.length;i++)
+			{
+				string+=array[i]+" ";
+			}
 			FileWriter fw = new FileWriter("/home/bridgelab/linledlistinteger.text");
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write(string);
@@ -1175,8 +1177,8 @@ public class Utility {
 
 
 	}
-	
-	
+
+
 	/**
 	 * @return
 	 * 
@@ -1212,6 +1214,95 @@ public class Utility {
 
 
 	}
+
+	//BALANCED PARENTHESIS
+
+
+	/**
+	 * @param string
+	 * @return boolean expression
+	 * this method is work for balanced parentheses from arithmetic expression.
+	 */
+	public static boolean balancedParentheses(String string)
+	{
+		int count = 0;
+		Stack<Character> stack = new Stack<Character>();
+		for (int i=0;i<string.length();i++)
+		{
+			if(string.charAt(i)=='(')
+			{
+				stack.push(string.charAt(i));
+				count++;
+			}
+
+			if(string.charAt(i)==')')
+			{
+				if(stack.isEmpty())
+				{
+					count--;
+				}
+				else
+				{
+					stack.pop();
+					count--;
+				}
+			}
+		}
+		if(stack.isEmpty() && count==0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	// checking weather string is palindrome or not
+
+	/**
+	 * @param string
+	 * @param reverse
+	 */
+	public static void checkPalindrom(String string,String reverse)
+	{
+		if(string.equals(reverse))
+		{
+			System.out.println("Given string is palindrome");
+		}
+		else
+		{
+			System.out.println("Given string is not palindome");
+		}
+	}
+	// Popping each character from queue from rare end and append to reverse string
+
+	/**
+	 * @param array
+	 * @param reverse
+	 * @return
+	 */
+	public static String popChar(ArrayDeque<Character>array,String reverse)
+	{
+		while(!array.isEmpty())
+		{
+			reverse+=array.removeLast();
+		}
+		return reverse;
+	}
+
+	/**
+	 * @param string
+	 * @param array
+	 */
+	public static void insertChar(String string,ArrayDeque array)
+	{
+		for (int i=0 ; i<string.length() ;i++ )
+		{
+			array.addLast(string.charAt(i));
+		}
+	}
+
 
 
 
